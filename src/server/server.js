@@ -1,6 +1,6 @@
-const express = require('express')
-const path = require('path')
-const startServer = (options) =>{
+import express from 'express'
+import path from 'node:path'
+export const startServer = (options) =>{
     const { port, public_path = 'public'} = options
     const app = express()
     app.use(express.static(public_path))
@@ -11,7 +11,4 @@ const startServer = (options) =>{
     app.listen(port, () =>{
         console.log("SERVER ON IN PORT http://localhost:" + port)
     })
-}
-module.exports = {
-    startServer
 }
